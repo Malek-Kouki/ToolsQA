@@ -25,11 +25,13 @@ public class Hooks {
     private static ExtentReports extent;
     public static ExtentTest test;
 
+    //Url de l'application
     private static final String baseUrl = "https://demoqa.com/";
+    // Chemin du rapport
     private static final String reportDir =
             System.getProperty("user.dir") + File.separator + "test-output" + File.separator + "custom-report";
 
-  
+    //Parmetre du rapport
     private static void initReportOnce() {
         if (extent != null) return;
 
@@ -52,6 +54,7 @@ public class Hooks {
         }));
     }
 
+    // Pour lancer le driver
     @Before
     public void beforeScenario(Scenario scenario) {
         initReportOnce();
@@ -64,6 +67,7 @@ public class Hooks {
         test = extent.createTest(scenario.getName());
     }
 
+    // Screenshot si cas de test Failed / Ou Passed dans le rapport + état d'exécution
     @After
     public void afterScenario(Scenario scenario) throws IOException {
         if (scenario.isFailed()) {

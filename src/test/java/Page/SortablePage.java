@@ -34,7 +34,9 @@ public class SortablePage {
 	}
 	
 	public boolean isOngletListActive() {
+		// Lire la valeur de class
 		String classValue = driver.findElement(menuList).getAttribute("class");
+		// Vérifier si la class contient "active"
 		return classValue.contains("active");
 	}
 	
