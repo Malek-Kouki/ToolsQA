@@ -17,6 +17,8 @@ public class AcceuilPage {
 	}
 	
 	private final By menuAlerte = By.cssSelector("a[href='/alertsWindows']");
+	private final By menuInterraction = By.cssSelector("a[href='/interaction']");
+
 	
 	public boolean isMenuAlerteFrameWindowDisplayed() {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(menuAlerte)).isDisplayed();
@@ -25,9 +27,7 @@ public class AcceuilPage {
 	public void clickToAlertFrameWindow() {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(menuAlerte)).click();
 	}
-	
-	private final By menuInterraction = By.cssSelector("a[href='/interaction']");
-	
+		
 	public void clickToInterraction() {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(menuInterraction)).click();
 	}

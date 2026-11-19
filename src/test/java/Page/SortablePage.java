@@ -20,10 +20,15 @@ public class SortablePage {
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		this.action = new Actions(driver);
 	}
-
-	private final By menuList = By.cssSelector("#demo-tab-list");
 	
+	private final By menuList = By.cssSelector("#demo-tab-list");
 	private final By menuGrid = By.cssSelector("#demo-tab-grid");
+	private final By elementOne = By.xpath("(//div[normalize-space()='One'])[1]");
+	private final By elementTwo = By.xpath("(//div[normalize-space()='Two'])[1]");
+	private final By elementThree = By.xpath("(//div[normalize-space()='Three'])[1]");
+	private final By elementFour = By.xpath("(//div[normalize-space()='Four'])[1]");
+	private final By elementFive = By.xpath("(//div[normalize-space()='Five'])[1]");
+	private final By elementSix = By.xpath("(//div[normalize-space()='Six'])[1]");
 	
 	public boolean isListDisplayed() {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(menuList)).isDisplayed();
@@ -39,18 +44,6 @@ public class SortablePage {
 		// Vérifier si la class contient "active"
 		return classValue.contains("active");
 	}
-	
-	private final By elementOne = By.xpath("(//div[normalize-space()='One'])[1]");
-	
-	private final By elementTwo = By.xpath("(//div[normalize-space()='Two'])[1]");
-	
-	private final By elementThree = By.xpath("(//div[normalize-space()='Three'])[1]");
-	
-	private final By elementFour = By.xpath("(//div[normalize-space()='Four'])[1]");
-	
-	private final By elementFive = By.xpath("(//div[normalize-space()='Five'])[1]");
-	
-	private final By elementSix = By.xpath("(//div[normalize-space()='Six'])[1]");
 	
 	public boolean isOneDisplayed() {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(elementOne)).isDisplayed();
@@ -113,5 +106,4 @@ public class SortablePage {
 		String firstPositionValue = firstPosition.getText();
 		return firstPositionValue;
 	}
-	
 }

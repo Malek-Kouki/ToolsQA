@@ -12,19 +12,19 @@ public class ReordonnerUnElement {
 	AcceuilPage acceuil = new AcceuilPage(Hooks.driver);
 	InterractionPage interraction = new InterractionPage(Hooks.driver);
 	SortablePage sortable = new SortablePage(Hooks.driver);
-
+	
 	@Given("Je suis dans l'onglet sortable")
 	public void je_suis_dans_l_onglet_sortable() {
-	    acceuil.clickToInterraction();
-	    interraction.clickToMenuSortable();
+		acceuil.clickToInterraction();
+		 interraction.clickToMenuSortable();
 	}
 
 	@Then("La page se charge correctement avec les onglets {string} et {string} visibles")
 	public void la_page_se_charge_correctement_avec_les_onglets_et_visibles(String string, String string2) {
-	    boolean isListDisplayeddValue = sortable.isListDisplayed();
-	    Assert.assertTrue("le menu list doit être affiché", isListDisplayeddValue);
-	    boolean isGridDisplayedValue = sortable.isGridDisplayed();
-	    Assert.assertTrue("le menu grid doit être affiché", isGridDisplayedValue);
+		 boolean isListDisplayeddValue = sortable.isListDisplayed();
+		 Assert.assertTrue("le menu list doit être affiché", isListDisplayeddValue);
+		 boolean isGridDisplayedValue = sortable.isGridDisplayed();
+		 Assert.assertTrue("le menu grid doit être affiché", isGridDisplayedValue);
 	}
 
 	@Then("L'onglet {string} est actif par défaut")
